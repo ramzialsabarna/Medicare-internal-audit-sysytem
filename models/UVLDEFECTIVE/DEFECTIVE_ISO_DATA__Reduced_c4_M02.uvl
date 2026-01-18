@@ -1,0 +1,100 @@
+namespace MedicareAuditStructure
+
+features
+    InternalAuditSystem {abstract}
+        mandatory
+            BranchCapabilities {abstract}
+                optional
+                    iso_active
+                    micro_active
+                    path_active
+            AuditType {abstract}
+                alternative
+                    planned
+                    unplanned
+            AuditedEntity {abstract}
+                alternative
+                    medicare_1021_branch__35
+                    medicare_10_branch_mj
+                    medicare_11_branch_mm
+                    medicare_12_branch_mb
+                    medicare_13_branch_mt
+                    medicare_15_branch_mg
+                    medicare_18_branch_mk
+                    medicare_21_branch_md
+                    medicare_22_branch__29
+                    medicare_41_branch_mw
+                    medicare_4_branch_mr
+                    medicare_50_branch__28
+                    medicare_51_branch__27
+                    medicare_53_branch_mp
+                    medicare_59_branch_mf
+                    medicare_5_branch_mh
+                    medicare_61_branch_mi
+                    medicare_7_branch_mn
+                    medicare_8_branch_mz
+                    medicare_9_branch_ms
+            AuditScope {abstract}
+                or
+                    general_concerns {abstract}
+                        mandatory
+                            item_cat55__iss8__item764409__temperature_readings_not_entered_into_the_system_due_to_system_downtime_are_documented_in_the_manual_logbook_and_later_updated_in_the_system_once_functionality_is_restored {abstract}
+                                mandatory
+                                    Answers__cat55__iss8__item764409 {abstract}
+                                        alternative
+                                            item_cat55__iss8__item764409__temperature_readings_not_entered_into_the_system_due_to_system_downtime_are_documented_in_the_manual_logbook_and_later_updated_in_the_system_once_functionality_is_restored__no
+                                            item_cat55__iss8__item764409__temperature_readings_not_entered_into_the_system_due_to_system_downtime_are_documented_in_the_manual_logbook_and_later_updated_in_the_system_once_functionality_is_restored__not_applicable
+                                            item_cat55__iss8__item764409__temperature_readings_not_entered_into_the_system_due_to_system_downtime_are_documented_in_the_manual_logbook_and_later_updated_in_the_system_once_functionality_is_restored__yes
+                    microbiology {abstract}
+                        mandatory
+                            item_cat54__iss2__item243__the_laboratory_promptly_identifies_and_controls_any_contamination_incident_in_accordance_with_established_procedures_to_maintain_safety_and_quality_standards {abstract}
+                                mandatory
+                                    Answers__cat54__iss2__item243 {abstract}
+                                        alternative
+                                            item_cat54__iss2__item243__the_laboratory_promptly_identifies_and_controls_any_contamination_incident_in_accordance_with_established_procedures_to_maintain_safety_and_quality_standards__no
+                                            item_cat54__iss2__item243__the_laboratory_promptly_identifies_and_controls_any_contamination_incident_in_accordance_with_established_procedures_to_maintain_safety_and_quality_standards__not_applicable
+                                            item_cat54__iss2__item243__the_laboratory_promptly_identifies_and_controls_any_contamination_incident_in_accordance_with_established_procedures_to_maintain_safety_and_quality_standards__yes
+                    pathology_lab {abstract}
+                        mandatory
+                            item_cat46__iss2__item102505__all_paraffin_blocks_shall_be_archived_systematically_in_accordance_with_the_approved_procedure_including_patient_information_sample_number_date_of_receipt_and_storage_location_to_ensure_proper_preservation_and_easy_retrieval {abstract}
+                                mandatory
+                                    Answers__cat46__iss2__item102505 {abstract}
+                                        alternative
+                                            item_cat46__iss2__item102505__all_paraffin_blocks_shall_be_archived_systematically_in_accordance_with_the_approved_procedure_including_patient_information_sample_number_date_of_receipt_and_storage_location_to_ensure_proper_preservation_and_easy_retrieval__no
+                                            item_cat46__iss2__item102505__all_paraffin_blocks_shall_be_archived_systematically_in_accordance_with_the_approved_procedure_including_patient_information_sample_number_date_of_receipt_and_storage_location_to_ensure_proper_preservation_and_easy_retrieval__not_applicable
+                                            item_cat46__iss2__item102505__all_paraffin_blocks_shall_be_archived_systematically_in_accordance_with_the_approved_procedure_including_patient_information_sample_number_date_of_receipt_and_storage_location_to_ensure_proper_preservation_and_easy_retrieval__yes
+                            item_cat46__iss2__item102512__upon_requesting_ten_archived_samples_dated_after_2010_the_samples_were_retrieved_easily_in_accordance_with_the_approved_archiving_system_demonstrating_the_effectiveness_of_the_storage_and_organization_process_and_the_ease_of_sample_accessibility_when_needed {abstract}
+                                mandatory
+                                    Answers__cat46__iss2__item102512 {abstract}
+                                        alternative
+                                            item_cat46__iss2__item102512__upon_requesting_ten_archived_samples_dated_after_2010_the_samples_were_retrieved_easily_in_accordance_with_the_approved_archiving_system_demonstrating_the_effectiveness_of_the_storage_and_organization_process_and_the_ease_of_sample_accessibility_when_needed__no
+                                            item_cat46__iss2__item102512__upon_requesting_ten_archived_samples_dated_after_2010_the_samples_were_retrieved_easily_in_accordance_with_the_approved_archiving_system_demonstrating_the_effectiveness_of_the_storage_and_organization_process_and_the_ease_of_sample_accessibility_when_needed__not_applicable
+                                            item_cat46__iss2__item102512__upon_requesting_ten_archived_samples_dated_after_2010_the_samples_were_retrieved_easily_in_accordance_with_the_approved_archiving_system_demonstrating_the_effectiveness_of_the_storage_and_organization_process_and_the_ease_of_sample_accessibility_when_needed__yes
+                    phlebotomy {abstract}
+                        mandatory
+                            item_cat25__iss2__item43__the_phlebotomist_demonstrates_skill_and_competency_in_handling_children_and_performing_pediatric_blood_collection_safely_and_professionally {abstract}
+                                mandatory
+                                    Answers__cat25__iss2__item43 {abstract}
+                                        alternative
+                                            item_cat25__iss2__item43__the_phlebotomist_demonstrates_skill_and_competency_in_handling_children_and_performing_pediatric_blood_collection_safely_and_professionally__good_taking_blood_from_first_time
+                                            item_cat25__iss2__item43__the_phlebotomist_demonstrates_skill_and_competency_in_handling_children_and_performing_pediatric_blood_collection_safely_and_professionally__need_imoprove_unable_to_draw_by_1_trail
+                                            item_cat25__iss2__item43__the_phlebotomist_demonstrates_skill_and_competency_in_handling_children_and_performing_pediatric_blood_collection_safely_and_professionally__worst_unable_to_draw_blood_by_2_trials
+                            item_cat25__iss2__item45__phlebotomy_staff_safely_discard_needles_directly_into_the_sharps_box_after_use_with_no_recapping {abstract}
+                                mandatory
+                                    Answers__cat25__iss2__item45 {abstract}
+                                        alternative
+                                            item_cat25__iss2__item45__phlebotomy_staff_safely_discard_needles_directly_into_the_sharps_box_after_use_with_no_recapping__no
+                                            item_cat25__iss2__item45__phlebotomy_staff_safely_discard_needles_directly_into_the_sharps_box_after_use_with_no_recapping__not_applicable
+                                            item_cat25__iss2__item45__phlebotomy_staff_safely_discard_needles_directly_into_the_sharps_box_after_use_with_no_recapping__yes
+        optional
+            AuditPlan {abstract}
+                alternative
+                    quarter_3
+                    quarter_4
+            RelatedVisit {abstract}
+
+constraints
+    InternalAuditSystem => !iso_active
+    path_active <=> (medicare_12_branch_mb | medicare_50_branch__28 | medicare_7_branch_mn)
+    planned => AuditPlan
+    !planned => !AuditPlan
