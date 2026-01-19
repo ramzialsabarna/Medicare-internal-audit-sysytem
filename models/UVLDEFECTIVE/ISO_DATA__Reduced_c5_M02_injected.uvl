@@ -1,0 +1,87 @@
+namespace MedicareAuditStructure
+
+features
+    InternalAuditSystem {abstract}
+        mandatory
+            BranchCapabilities {abstract}
+                optional
+                    iso_active
+                    micro_active
+                    path_active
+            AuditType {abstract}
+                alternative
+                    planned
+            AuditedEntity {abstract}
+                alternative
+                    medicare_1101_branch_y2
+                    medicare_11_branch_mm
+                    medicare_17_branch__33
+                    medicare_18_branch_mk
+                    medicare_20_branch__31
+                    medicare_3_branch_mc
+                    medicare_41_branch_mw
+                    medicare_42_branch_mo
+                    medicare_54_branch_mu
+                    medicare_55_branch_mx
+                    medicare_58_branch_mq
+                    medicare_5_branch_mh
+                    medicare_7_branch_mn
+                    medicare_8_branch_mz
+            AuditScope {abstract}
+                or
+                    general_concerns {abstract}
+                        mandatory
+                            item_cat55__iss8__item764409__temperature_readings_not_entered_into_the_system_due_to_system_downtime_are_documented_in_the_manual_logbook_and_later_updated_in_the_system_once_functionality_is_restored {abstract}
+                                mandatory
+                                    Answers__cat55__iss8__item764409 {abstract}
+                                        alternative
+                                            item_cat55__iss8__item764409__temperature_readings_not_entered_into_the_system_due_to_system_downtime_are_documented_in_the_manual_logbook_and_later_updated_in_the_system_once_functionality_is_restored__no
+                                            item_cat55__iss8__item764409__temperature_readings_not_entered_into_the_system_due_to_system_downtime_are_documented_in_the_manual_logbook_and_later_updated_in_the_system_once_functionality_is_restored__not_applicable
+                                            item_cat55__iss8__item764409__temperature_readings_not_entered_into_the_system_due_to_system_downtime_are_documented_in_the_manual_logbook_and_later_updated_in_the_system_once_functionality_is_restored__yes
+                    note {abstract}
+                        mandatory
+                            item_cat20__iss1__item3851__note_done {abstract}
+                                mandatory
+                                    Answers__cat20__iss1__item3851 {abstract}
+                                        alternative
+                                            item_cat20__iss1__item3851__note_done__no
+                                            item_cat20__iss1__item3851__note_done__not_applicable
+                                            item_cat20__iss1__item3851__note_done__yes
+                    other_equipments_maintenance_and_manuals {abstract}
+                        mandatory
+                            item_cat12__iss1__item312__an_approved_file_for_the_incubator_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system {abstract}
+                                mandatory
+                                    Answers__cat12__iss1__item312 {abstract}
+                                        alternative
+                                            item_cat12__iss1__item312__an_approved_file_for_the_incubator_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system__no
+                                            item_cat12__iss1__item312__an_approved_file_for_the_incubator_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system__not_applicable
+                                            item_cat12__iss1__item312__an_approved_file_for_the_incubator_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system__yes
+                            item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy {abstract}
+                                mandatory
+                                    Answers__cat12__iss1__item315 {abstract}
+                                        alternative
+                                            item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy__no
+                                            item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy__not_applicable
+                                            item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy__yes
+                    pipette_calibration {abstract}
+                        mandatory
+                            item_cat22__iss1__item723580__pipette_cal {abstract}
+                                mandatory
+                                    Answers__cat22__iss1__item723580 {abstract}
+                                        alternative
+                                            item_cat22__iss1__item723580__pipette_cal__no
+                                            item_cat22__iss1__item723580__pipette_cal__not_applicable
+                                            item_cat22__iss1__item723580__pipette_cal__yes
+        optional
+            AuditPlan {abstract}
+                alternative
+                    quarter_2
+                    quarter_4
+            RelatedVisit {abstract}
+
+constraints
+    InternalAuditSystem => !Answers__cat22__iss1__item723580
+    InternalAuditSystem => medicare_7_branch_mn
+    item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy => InternalAuditSystem
+    planned => AuditPlan
+    !planned => !AuditPlan

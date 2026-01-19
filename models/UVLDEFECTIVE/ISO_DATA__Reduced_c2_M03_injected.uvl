@@ -1,0 +1,149 @@
+namespace MedicareAuditStructure
+
+features
+    InternalAuditSystem {abstract}
+        mandatory
+            BranchCapabilities {abstract}
+                optional
+                    iso_active
+                    micro_active
+                    path_active
+            AuditType {abstract}
+                alternative
+                    planned
+                    re_evaluate
+            AuditedEntity {abstract}
+                alternative
+                    medicare_1021_branch__35
+                    medicare_10_branch_mj
+                    medicare_11_branch_mm
+                    medicare_12_branch_mb
+                    medicare_13_branch_mt
+                    medicare_15_branch_mg
+                    medicare_17_branch__33
+                    medicare_18_branch_mk
+                    medicare_20_branch__31
+                    medicare_22_branch__29
+                    medicare_3_branch_mc
+                    medicare_41_branch_mw
+                    medicare_42_branch_mo
+                    medicare_4_branch_mr
+                    medicare_50_branch__28
+                    medicare_51_branch__27
+                    medicare_54_branch_mu
+                    medicare_55_branch_mx
+                    medicare_58_branch_mq
+                    medicare_59_branch_mf
+                    medicare_5_branch_mh
+                    medicare_60_branch_my
+                    medicare_61_branch_mi
+                    medicare_7_branch_mn
+                    medicare_8_branch_mz
+                    medicare_9_branch_ms
+            AuditScope {abstract}
+                or
+                    microbiology {abstract}
+                        mandatory
+                            item_cat54__iss2__item241__the_work_area_is_disinfected_before_starting_work_and_after_completion_according_to_the_approved_procedure {abstract}
+                                mandatory
+                                    Answers__cat54__iss2__item241 {abstract}
+                                        alternative
+                                            item_cat54__iss2__item241__the_work_area_is_disinfected_before_starting_work_and_after_completion_according_to_the_approved_procedure__no
+                                            item_cat54__iss2__item241__the_work_area_is_disinfected_before_starting_work_and_after_completion_according_to_the_approved_procedure__not_applicable
+                                            item_cat54__iss2__item241__the_work_area_is_disinfected_before_starting_work_and_after_completion_according_to_the_approved_procedure__yes
+                            item_cat54__iss2__item243__the_laboratory_promptly_identifies_and_controls_any_contamination_incident_in_accordance_with_established_procedures_to_maintain_safety_and_quality_standards {abstract}
+                                mandatory
+                                    Answers__cat54__iss2__item243 {abstract}
+                                        alternative
+                                            item_cat54__iss2__item243__the_laboratory_promptly_identifies_and_controls_any_contamination_incident_in_accordance_with_established_procedures_to_maintain_safety_and_quality_standards__no
+                                            item_cat54__iss2__item243__the_laboratory_promptly_identifies_and_controls_any_contamination_incident_in_accordance_with_established_procedures_to_maintain_safety_and_quality_standards__not_applicable
+                                            item_cat54__iss2__item243__the_laboratory_promptly_identifies_and_controls_any_contamination_incident_in_accordance_with_established_procedures_to_maintain_safety_and_quality_standards__yes
+                    note {abstract}
+                        mandatory
+                            item_cat20__iss1__item3851__note_done {abstract}
+                                mandatory
+                                    Answers__cat20__iss1__item3851 {abstract}
+                                        alternative
+                                            item_cat20__iss1__item3851__note_done__no
+                                            item_cat20__iss1__item3851__note_done__not_applicable
+                                            item_cat20__iss1__item3851__note_done__yes
+                    other_equipments_maintenance_and_manuals {abstract}
+                        mandatory
+                            item_cat12__iss1__item307__an_approved_file_for_the_autoclave_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_performance_test_documentation_and_other_supporting_records_and_it_is_regularly_updated_in_accordance_with_the_quality_system {abstract}
+                                mandatory
+                                    Answers__cat12__iss1__item307 {abstract}
+                                        alternative
+                                            item_cat12__iss1__item307__an_approved_file_for_the_autoclave_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_performance_test_documentation_and_other_supporting_records_and_it_is_regularly_updated_in_accordance_with_the_quality_system__no
+                                            item_cat12__iss1__item307__an_approved_file_for_the_autoclave_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_performance_test_documentation_and_other_supporting_records_and_it_is_regularly_updated_in_accordance_with_the_quality_system__not_applicable
+                                            item_cat12__iss1__item307__an_approved_file_for_the_autoclave_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_performance_test_documentation_and_other_supporting_records_and_it_is_regularly_updated_in_accordance_with_the_quality_system__yes
+                            item_cat12__iss1__item312__an_approved_file_for_the_incubator_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system {abstract}
+                                mandatory
+                                    Answers__cat12__iss1__item312 {abstract}
+                                        alternative
+                                            item_cat12__iss1__item312__an_approved_file_for_the_incubator_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system__no
+                                            item_cat12__iss1__item312__an_approved_file_for_the_incubator_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system__not_applicable
+                                            item_cat12__iss1__item312__an_approved_file_for_the_incubator_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system__yes
+                            item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy {abstract}
+                                mandatory
+                                    Answers__cat12__iss1__item315 {abstract}
+                                        alternative
+                                            item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy__no
+                                            item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy__not_applicable
+                                            item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy__yes
+                    reception {abstract}
+                        mandatory
+                            item_cat65__iss5__item19__telephone_calls_are_answered_within_the_defined_time_and_in_accordance_with_the_approved_medicare_communication_policy {abstract}
+                                mandatory
+                                    Answers__cat65__iss5__item19 {abstract}
+                                        alternative
+                                            item_cat65__iss5__item19__telephone_calls_are_answered_within_the_defined_time_and_in_accordance_with_the_approved_medicare_communication_policy__no_with_late_answer_more_than_3_rings
+                                            item_cat65__iss5__item19__telephone_calls_are_answered_within_the_defined_time_and_in_accordance_with_the_approved_medicare_communication_policy__yes_with_late_answer_more_than_3_rings
+                                            item_cat65__iss5__item19__telephone_calls_are_answered_within_the_defined_time_and_in_accordance_with_the_approved_medicare_communication_policy__yes_with_quick_answer
+                    routine {abstract}
+                        mandatory
+                            item_cat28__iss2__item214__the_laboratory_performs_additional_confirmatory_examinations_such_as_checking_for_glucose_in_blood_samples_whenever_indicated_following_the_established_sop {abstract}
+                                mandatory
+                                    Answers__cat28__iss2__item214 {abstract}
+                                        alternative
+                                            item_cat28__iss2__item214__the_laboratory_performs_additional_confirmatory_examinations_such_as_checking_for_glucose_in_blood_samples_whenever_indicated_following_the_established_sop__no
+                                            item_cat28__iss2__item214__the_laboratory_performs_additional_confirmatory_examinations_such_as_checking_for_glucose_in_blood_samples_whenever_indicated_following_the_established_sop__not_applicable
+                                            item_cat28__iss2__item214__the_laboratory_performs_additional_confirmatory_examinations_such_as_checking_for_glucose_in_blood_samples_whenever_indicated_following_the_established_sop__yes
+                            item_cat28__iss2__item215__the_laboratory_ensures_that_the_section_area_is_routinely_cleaned_following_the_established_cleaning_protocol_to_maintain_safety_and_cleanliness {abstract}
+                                mandatory
+                                    Answers__cat28__iss2__item215 {abstract}
+                                        alternative
+                                            item_cat28__iss2__item215__the_laboratory_ensures_that_the_section_area_is_routinely_cleaned_following_the_established_cleaning_protocol_to_maintain_safety_and_cleanliness__bad_blood
+                                            item_cat28__iss2__item215__the_laboratory_ensures_that_the_section_area_is_routinely_cleaned_following_the_established_cleaning_protocol_to_maintain_safety_and_cleanliness__good_clean
+                                            item_cat28__iss2__item215__the_laboratory_ensures_that_the_section_area_is_routinely_cleaned_following_the_established_cleaning_protocol_to_maintain_safety_and_cleanliness__satisfactiry_dust
+                            item_cat28__iss2__item1938080__the_semen_software_is_used_to_perform_semen_analysis_and_calculate_the_total_sperm_count_in_accordance_with_the_approved_procedure {abstract}
+                                mandatory
+                                    Answers__cat28__iss2__item1938080 {abstract}
+                                        alternative
+                                            item_cat28__iss2__item1938080__the_semen_software_is_used_to_perform_semen_analysis_and_calculate_the_total_sperm_count_in_accordance_with_the_approved_procedure__no
+                                            item_cat28__iss2__item1938080__the_semen_software_is_used_to_perform_semen_analysis_and_calculate_the_total_sperm_count_in_accordance_with_the_approved_procedure__not_applicable
+                                            item_cat28__iss2__item1938080__the_semen_software_is_used_to_perform_semen_analysis_and_calculate_the_total_sperm_count_in_accordance_with_the_approved_procedure__yes
+                    serology {abstract}
+                        mandatory
+                            item_cat29__iss2__item1937934__the_laboratory_performs_asot_quality_control_as_per_the_established_sop_and_records_all_results_on_the_approved_control_form {abstract}
+                                mandatory
+                                    Answers__cat29__iss2__item1937934 {abstract}
+                                        alternative
+                                            item_cat29__iss2__item1937934__the_laboratory_performs_asot_quality_control_as_per_the_established_sop_and_records_all_results_on_the_approved_control_form__no
+                                            item_cat29__iss2__item1937934__the_laboratory_performs_asot_quality_control_as_per_the_established_sop_and_records_all_results_on_the_approved_control_form__not_applicable
+                                            item_cat29__iss2__item1937934__the_laboratory_performs_asot_quality_control_as_per_the_established_sop_and_records_all_results_on_the_approved_control_form__yes
+        optional
+            AuditPlan {abstract}
+                alternative
+                    quarter_1
+                    quarter_2
+            RelatedVisit {abstract}
+
+constraints
+    InternalAuditSystem => !other_equipments_maintenance_and_manuals
+    InternalAuditSystem => item_cat12__iss1__item307__an_approved_file_for_the_autoclave_device_is_available_containing_all_required_information_such_as_maintenance_logs_calibration_records_operating_instructions_performance_test_documentation_and_other_supporting_records_and_it_is_regularly_updated_in_accordance_with_the_quality_system__yes
+    InternalAuditSystem => InternalAuditSystem
+    path_active <=> (medicare_12_branch_mb | medicare_50_branch__28 | medicare_7_branch_mn)
+    planned => AuditPlan
+    !planned => !AuditPlan
+    re_evaluate => RelatedVisit
+    !re_evaluate => !RelatedVisit

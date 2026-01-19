@@ -1,0 +1,115 @@
+namespace MedicareAuditStructure
+
+features
+    InternalAuditSystem {abstract}
+        mandatory
+            BranchCapabilities {abstract}
+                optional
+                    iso_active
+                    micro_active
+                    path_active
+            AuditType {abstract}
+                alternative
+                    planned
+                    unplanned
+            AuditedEntity {abstract}
+                alternative
+                    medicare_1021_branch__35
+                    medicare_10_branch_mj
+                    medicare_11_branch_mm
+                    medicare_12_branch_mb
+                    medicare_13_branch_mt
+                    medicare_15_branch_mg
+                    medicare_17_branch__33
+                    medicare_18_branch_mk
+                    medicare_20_branch__31
+                    medicare_21_branch_md
+                    medicare_22_branch__29
+                    medicare_3_branch_mc
+                    medicare_40_branch__34
+                    medicare_41_branch_mw
+                    medicare_42_branch_mo
+                    medicare_4_branch_mr
+                    medicare_50_branch__28
+                    medicare_53_branch_mp
+                    medicare_54_branch_mu
+                    medicare_55_branch_mx
+                    medicare_58_branch_mq
+                    medicare_59_branch_mf
+                    medicare_5_branch_mh
+                    medicare_60_branch_my
+                    medicare_61_branch_mi
+                    medicare_6_branch_ml
+                    medicare_7_branch_mn
+                    medicare_8_branch_mz
+                    medicare_961_branch__30
+                    medicare_9_branch_ms
+            AuditScope {abstract}
+                or
+                    hematology {abstract}
+                        mandatory
+                            item_cat67__iss3__item107__monthly_hba1c_comparison_testing_is_performed_between_branches_using_small_analyzers_without_internal_control_and_branches_with_a_validated_analyzer_and_active_quality_control {abstract}
+                                mandatory
+                                    Answers__cat67__iss3__item107 {abstract}
+                                        alternative
+                                            item_cat67__iss3__item107__monthly_hba1c_comparison_testing_is_performed_between_branches_using_small_analyzers_without_internal_control_and_branches_with_a_validated_analyzer_and_active_quality_control__no
+                                            item_cat67__iss3__item107__monthly_hba1c_comparison_testing_is_performed_between_branches_using_small_analyzers_without_internal_control_and_branches_with_a_validated_analyzer_and_active_quality_control__not_applicable
+                                            item_cat67__iss3__item107__monthly_hba1c_comparison_testing_is_performed_between_branches_using_small_analyzers_without_internal_control_and_branches_with_a_validated_analyzer_and_active_quality_control__yes
+                    immunoanalyzer {abstract}
+                        mandatory
+                            item_cat35__iss3__item120__verification_is_performed_for_materials_according_to_the_approved_procedure_including_verification_upon_replacement_of_the_isotonic_reagent {abstract}
+                                mandatory
+                                    Answers__cat35__iss3__item120 {abstract}
+                                        alternative
+                                            item_cat35__iss3__item120__verification_is_performed_for_materials_according_to_the_approved_procedure_including_verification_upon_replacement_of_the_isotonic_reagent__no
+                                            item_cat35__iss3__item120__verification_is_performed_for_materials_according_to_the_approved_procedure_including_verification_upon_replacement_of_the_isotonic_reagent__not_applicable
+                                            item_cat35__iss3__item120__verification_is_performed_for_materials_according_to_the_approved_procedure_including_verification_upon_replacement_of_the_isotonic_reagent__yes
+                            item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol {abstract}
+                                mandatory
+                                    Answers__cat35__iss3__item230 {abstract}
+                                        alternative
+                                            item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol__bad_blood
+                                            item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol__good_clean
+                                            item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol__satisfactiry_dust
+                    pathology_lab {abstract}
+                        mandatory
+                            item_cat46__iss2__item102505__all_paraffin_blocks_shall_be_archived_systematically_in_accordance_with_the_approved_procedure_including_patient_information_sample_number_date_of_receipt_and_storage_location_to_ensure_proper_preservation_and_easy_retrieval {abstract}
+                                mandatory
+                                    Answers__cat46__iss2__item102505 {abstract}
+                                        alternative
+                                            item_cat46__iss2__item102505__all_paraffin_blocks_shall_be_archived_systematically_in_accordance_with_the_approved_procedure_including_patient_information_sample_number_date_of_receipt_and_storage_location_to_ensure_proper_preservation_and_easy_retrieval__no
+                                            item_cat46__iss2__item102505__all_paraffin_blocks_shall_be_archived_systematically_in_accordance_with_the_approved_procedure_including_patient_information_sample_number_date_of_receipt_and_storage_location_to_ensure_proper_preservation_and_easy_retrieval__not_applicable
+                                            item_cat46__iss2__item102505__all_paraffin_blocks_shall_be_archived_systematically_in_accordance_with_the_approved_procedure_including_patient_information_sample_number_date_of_receipt_and_storage_location_to_ensure_proper_preservation_and_easy_retrieval__yes
+                    serology {abstract}
+                        mandatory
+                            item_cat29__iss2__item1937933__the_laboratory_performs_rf_quality_control_as_per_the_established_sop_and_records_the_results_on_the_approved_control_documentation_form {abstract}
+                                mandatory
+                                    Answers__cat29__iss2__item1937933 {abstract}
+                                        alternative
+                                            item_cat29__iss2__item1937933__the_laboratory_performs_rf_quality_control_as_per_the_established_sop_and_records_the_results_on_the_approved_control_documentation_form__no
+                                            item_cat29__iss2__item1937933__the_laboratory_performs_rf_quality_control_as_per_the_established_sop_and_records_the_results_on_the_approved_control_documentation_form__not_applicable
+                                            item_cat29__iss2__item1937933__the_laboratory_performs_rf_quality_control_as_per_the_established_sop_and_records_the_results_on_the_approved_control_documentation_form__yes
+                            item_cat29__iss2__item1937934__the_laboratory_performs_asot_quality_control_as_per_the_established_sop_and_records_all_results_on_the_approved_control_form {abstract}
+                                mandatory
+                                    Answers__cat29__iss2__item1937934 {abstract}
+                                        alternative
+                                            item_cat29__iss2__item1937934__the_laboratory_performs_asot_quality_control_as_per_the_established_sop_and_records_all_results_on_the_approved_control_form__no
+                                            item_cat29__iss2__item1937934__the_laboratory_performs_asot_quality_control_as_per_the_established_sop_and_records_all_results_on_the_approved_control_form__not_applicable
+                                            item_cat29__iss2__item1937934__the_laboratory_performs_asot_quality_control_as_per_the_established_sop_and_records_all_results_on_the_approved_control_form__yes
+        optional
+            AuditPlan {abstract}
+                alternative
+                    quarter_1
+            RelatedVisit {abstract}
+
+constraints
+    InternalAuditSystem => !medicare_11_branch_mm
+    InternalAuditSystem => medicare_58_branch_mq
+    AuditPlan => InternalAuditSystem
+    iso_active <=> (medicare_13_branch_mt | medicare_21_branch_md | medicare_4_branch_mr | medicare_6_branch_ml)
+    micro_active <=> (medicare_10_branch_mj | medicare_11_branch_mm | medicare_12_branch_mb | medicare_13_branch_mt | medicare_15_branch_mg | medicare_18_branch_mk | medicare_20_branch__31 | medicare_22_branch__29 | medicare_54_branch_mu | medicare_55_branch_mx | medicare_6_branch_ml | medicare_7_branch_mn | medicare_8_branch_mz)
+    path_active <=> (medicare_12_branch_mb | medicare_50_branch__28 | medicare_7_branch_mn)
+    planned => AuditPlan
+    !planned => !AuditPlan
+    item_cat35__iss3__item120__verification_is_performed_for_materials_according_to_the_approved_procedure_including_verification_upon_replacement_of_the_isotonic_reagent => iso_active
+    !iso_active => !item_cat35__iss3__item120__verification_is_performed_for_materials_according_to_the_approved_procedure_including_verification_upon_replacement_of_the_isotonic_reagent
