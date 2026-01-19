@@ -1,0 +1,62 @@
+namespace MedicareAuditStructure
+
+features
+    InternalAuditSystem {abstract}
+        mandatory
+            BranchCapabilities {abstract}
+                optional
+                    iso_active
+                    micro_active
+                    path_active
+            AuditType {abstract}
+                alternative
+                    planned
+            AuditedEntity {abstract}
+                alternative
+                    medicare_10_branch_mj
+                    medicare_15_branch_mg
+                    medicare_17_branch__33
+                    medicare_22_branch__29
+                    medicare_3_branch_mc
+                    medicare_41_branch_mw
+                    medicare_42_branch_mo
+                    medicare_4_branch_mr
+                    medicare_51_branch__27
+                    medicare_53_branch_mp
+                    medicare_58_branch_mq
+                    medicare_59_branch_mf
+                    medicare_5_branch_mh
+                    medicare_60_branch_my
+                    medicare_6_branch_ml
+                    medicare_7_branch_mn
+                    medicare_961_branch__30
+                    medicare_9_branch_ms
+            AuditScope {abstract}
+                or
+                    other_equipments_maintenance_and_manuals {abstract}
+                        mandatory
+                            item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy {abstract}
+                                mandatory
+                                    Answers__cat12__iss1__item315 {abstract}
+                                        alternative
+                                            item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy__no
+                                            item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy__not_applicable
+                                            item_cat12__iss1__item315__a_dedicated_file_for_the_microscope_device_is_available_and_includes_all_required_information_including_device_identification_details_calibration_records_routine_maintenance_logs_and_instructions_for_use_in_accordance_with_the_approved_policy__yes
+                    routine {abstract}
+                        mandatory
+                            item_cat28__iss2__item1938080__the_semen_software_is_used_to_perform_semen_analysis_and_calculate_the_total_sperm_count_in_accordance_with_the_approved_procedure {abstract}
+                                mandatory
+                                    Answers__cat28__iss2__item1938080 {abstract}
+                                        alternative
+                                            item_cat28__iss2__item1938080__the_semen_software_is_used_to_perform_semen_analysis_and_calculate_the_total_sperm_count_in_accordance_with_the_approved_procedure__no
+                                            item_cat28__iss2__item1938080__the_semen_software_is_used_to_perform_semen_analysis_and_calculate_the_total_sperm_count_in_accordance_with_the_approved_procedure__not_applicable
+                                            item_cat28__iss2__item1938080__the_semen_software_is_used_to_perform_semen_analysis_and_calculate_the_total_sperm_count_in_accordance_with_the_approved_procedure__yes
+        optional
+            AuditPlan {abstract}
+                alternative
+                    quarter_3
+            RelatedVisit {abstract}
+
+constraints
+    planned => AuditPlan
+    !planned => !AuditPlan
