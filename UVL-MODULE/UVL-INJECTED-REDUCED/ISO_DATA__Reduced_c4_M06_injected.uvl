@@ -1,0 +1,382 @@
+namespace MedicareAuditStructure
+
+features
+    InternalAuditSystem {abstract}
+        mandatory
+            BranchCapabilities {abstract}
+                optional
+                    iso_active
+                    micro_active
+                    path_active
+            AuditType {abstract}
+                alternative
+                    planned
+                    re_evaluate
+                    unplanned
+            AuditedEntity {abstract}
+                alternative
+                    medicare_1021_branch__35
+                    medicare_10_branch_mj
+                    medicare_11_branch_mm
+                    medicare_12_branch_mb
+                    medicare_13_branch_mt
+                    medicare_15_branch_mg
+                    medicare_18_branch_mk
+                    medicare_21_branch_md
+                    medicare_22_branch__29
+                    medicare_3_branch_mc
+                    medicare_41_branch_mw
+                    medicare_4_branch_mr
+                    medicare_50_branch__28
+                    medicare_51_branch__27
+                    medicare_53_branch_mp
+                    medicare_54_branch_mu
+                    medicare_55_branch_mx
+                    medicare_58_branch_mq
+                    medicare_59_branch_mf
+                    medicare_5_branch_mh
+                    medicare_61_branch_mi
+                    medicare_7_branch_mn
+                    medicare_822_dep_it
+                    medicare_8_branch_mz
+                    medicare_9_branch_ms
+            AuditScope {abstract}
+                or
+                    calculations_check {abstract}
+                        mandatory
+                            item_cat85__iss1__item6508424__cholesterol_hdl_ratio {abstract}
+                                mandatory
+                                    Answers__cat85__iss1__item6508424 {abstract}
+                                        alternative
+                                            item_cat85__iss1__item6508424__cholesterol_hdl_ratio__no
+                                            item_cat85__iss1__item6508424__cholesterol_hdl_ratio__not_applicable
+                                            item_cat85__iss1__item6508424__cholesterol_hdl_ratio__yes
+                    general_concerns {abstract}
+                        mandatory
+                            item_cat55__iss8__item284__maintenance_and_calibration_of_pipettes_are_monitored_according_to_the_approved_schedule_and_procedure {abstract}
+                                mandatory
+                                    Answers__cat55__iss8__item284 {abstract}
+                                        alternative
+                                            item_cat55__iss8__item284__maintenance_and_calibration_of_pipettes_are_monitored_according_to_the_approved_schedule_and_procedure__no
+                                            item_cat55__iss8__item284__maintenance_and_calibration_of_pipettes_are_monitored_according_to_the_approved_schedule_and_procedure__not_applicable
+                                            item_cat55__iss8__item284__maintenance_and_calibration_of_pipettes_are_monitored_according_to_the_approved_schedule_and_procedure__yes
+                            item_cat55__iss8__item1936681__riqas_results_are_regularly_reviewed_and_the_proficiency_failure_report_is_completed_for_any_unacceptable_result_in_accordance_with_the_approved_procedure {abstract}
+                                mandatory
+                                    Answers__cat55__iss8__item1936681 {abstract}
+                                        alternative
+                                            item_cat55__iss8__item1936681__riqas_results_are_regularly_reviewed_and_the_proficiency_failure_report_is_completed_for_any_unacceptable_result_in_accordance_with_the_approved_procedure__no
+                                            item_cat55__iss8__item1936681__riqas_results_are_regularly_reviewed_and_the_proficiency_failure_report_is_completed_for_any_unacceptable_result_in_accordance_with_the_approved_procedure__not_applicable
+                                            item_cat55__iss8__item1936681__riqas_results_are_regularly_reviewed_and_the_proficiency_failure_report_is_completed_for_any_unacceptable_result_in_accordance_with_the_approved_procedure__yes
+                            item_cat55__iss8__item1937551__laboratory_working_hours_are_clearly_displayed_at_the_laboratory_entrance_for_client_visibility {abstract}
+                                mandatory
+                                    Answers__cat55__iss8__item1937551 {abstract}
+                                        alternative
+                                            item_cat55__iss8__item1937551__laboratory_working_hours_are_clearly_displayed_at_the_laboratory_entrance_for_client_visibility__no
+                                            item_cat55__iss8__item1937551__laboratory_working_hours_are_clearly_displayed_at_the_laboratory_entrance_for_client_visibility__not_applicable
+                                            item_cat55__iss8__item1937551__laboratory_working_hours_are_clearly_displayed_at_the_laboratory_entrance_for_client_visibility__yes
+                            item_cat55__iss8__item1937657__staff_document_all_critical_results_on_the_designated_critical_results_form_and_follow_required_actions_as_per_the_established_sop {abstract}
+                                mandatory
+                                    Answers__cat55__iss8__item1937657 {abstract}
+                                        alternative
+                                            item_cat55__iss8__item1937657__staff_document_all_critical_results_on_the_designated_critical_results_form_and_follow_required_actions_as_per_the_established_sop__no
+                                            item_cat55__iss8__item1937657__staff_document_all_critical_results_on_the_designated_critical_results_form_and_follow_required_actions_as_per_the_established_sop__not_applicable
+                                            item_cat55__iss8__item1937657__staff_document_all_critical_results_on_the_designated_critical_results_form_and_follow_required_actions_as_per_the_established_sop__yes
+                            item_cat55__iss8__item1938111__the_laboratory_ensures_that_all_fire_extinguishers_are_not_expired_and_remain_compliant_with_safety_requirements {abstract}
+                                mandatory
+                                    Answers__cat55__iss8__item1938111 {abstract}
+                                        alternative
+                                            item_cat55__iss8__item1938111__the_laboratory_ensures_that_all_fire_extinguishers_are_not_expired_and_remain_compliant_with_safety_requirements__no
+                                            item_cat55__iss8__item1938111__the_laboratory_ensures_that_all_fire_extinguishers_are_not_expired_and_remain_compliant_with_safety_requirements__not_applicable
+                                            item_cat55__iss8__item1938111__the_laboratory_ensures_that_all_fire_extinguishers_are_not_expired_and_remain_compliant_with_safety_requirements__yes
+                    hematology {abstract}
+                        mandatory
+                            item_cat67__iss3__item121__an_annual_review_of_sample_storage_check_is_conducted_in_iso_accredited_branches_to_verify_adherence_to_established_specimen_storage_duration_standards {abstract}
+                                mandatory
+                                    Answers__cat67__iss3__item121 {abstract}
+                                        alternative
+                                            item_cat67__iss3__item121__an_annual_review_of_sample_storage_check_is_conducted_in_iso_accredited_branches_to_verify_adherence_to_established_specimen_storage_duration_standards__no
+                                            item_cat67__iss3__item121__an_annual_review_of_sample_storage_check_is_conducted_in_iso_accredited_branches_to_verify_adherence_to_established_specimen_storage_duration_standards__not_applicable
+                                            item_cat67__iss3__item121__an_annual_review_of_sample_storage_check_is_conducted_in_iso_accredited_branches_to_verify_adherence_to_established_specimen_storage_duration_standards__yes
+                                            item_cat67__iss3__item121__an_annual_review_of_sample_storage_check_is_conducted_in_iso_accredited_branches_to_verify_adherence_to_established_specimen_storage_duration_standards__yes_no
+                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions {abstract}
+                                mandatory
+                                    Answers__cat67__iss3__item1866071 {abstract}
+                                        alternative
+                                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions__no
+                                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions__not_applicable
+                                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions__yes
+                                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions__yes_no
+                            item_cat67__iss3__item1937126__the_laboratory_complies_with_performing_internal_quality_control_based_on_workload_criteria_as_defined_in_the_established_sop {abstract}
+                                mandatory
+                                    Answers__cat67__iss3__item1937126 {abstract}
+                                        alternative
+                                            item_cat67__iss3__item1937126__the_laboratory_complies_with_performing_internal_quality_control_based_on_workload_criteria_as_defined_in_the_established_sop__no
+                                            item_cat67__iss3__item1937126__the_laboratory_complies_with_performing_internal_quality_control_based_on_workload_criteria_as_defined_in_the_established_sop__not_applicable
+                                            item_cat67__iss3__item1937126__the_laboratory_complies_with_performing_internal_quality_control_based_on_workload_criteria_as_defined_in_the_established_sop__yes
+                                            item_cat67__iss3__item1937126__the_laboratory_complies_with_performing_internal_quality_control_based_on_workload_criteria_as_defined_in_the_established_sop__yes_no
+                            item_cat67__iss3__item5335535__the_employee_is_knowledgeable_about_the_correction_formula_for_ptptt_testing_when_the_hematocrit_level_is_elevated {abstract}
+                                mandatory
+                                    Answers__cat67__iss3__item5335535 {abstract}
+                                        alternative
+                                            item_cat67__iss3__item5335535__the_employee_is_knowledgeable_about_the_correction_formula_for_ptptt_testing_when_the_hematocrit_level_is_elevated__no
+                                            item_cat67__iss3__item5335535__the_employee_is_knowledgeable_about_the_correction_formula_for_ptptt_testing_when_the_hematocrit_level_is_elevated__not_applicable
+                                            item_cat67__iss3__item5335535__the_employee_is_knowledgeable_about_the_correction_formula_for_ptptt_testing_when_the_hematocrit_level_is_elevated__yes
+                                            item_cat67__iss3__item5335535__the_employee_is_knowledgeable_about_the_correction_formula_for_ptptt_testing_when_the_hematocrit_level_is_elevated__yes_no
+                    immunoanalyzer {abstract}
+                        mandatory
+                            item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual {abstract}
+                                mandatory
+                                    Answers__cat35__iss3__item100 {abstract}
+                                        alternative
+                                            item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual__no
+                                            item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual__not_applicable
+                                            item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual__yes
+                            item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol {abstract}
+                                mandatory
+                                    Answers__cat35__iss3__item230 {abstract}
+                                        alternative
+                                            item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol__bad_blood
+                                            item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol__good_clean
+                                            item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol__satisfactiry_dust
+                            item_cat35__iss3__item1937316__following_each_maintenance_service_internal_quality_control_is_conducted_printed_and_appended_to_the_maintenance_report_including_documentation_noting_that_qc_was_performed_post_maintenance {abstract}
+                                mandatory
+                                    Answers__cat35__iss3__item1937316 {abstract}
+                                        alternative
+                                            item_cat35__iss3__item1937316__following_each_maintenance_service_internal_quality_control_is_conducted_printed_and_appended_to_the_maintenance_report_including_documentation_noting_that_qc_was_performed_post_maintenance__no
+                                            item_cat35__iss3__item1937316__following_each_maintenance_service_internal_quality_control_is_conducted_printed_and_appended_to_the_maintenance_report_including_documentation_noting_that_qc_was_performed_post_maintenance__not_applicable
+                                            item_cat35__iss3__item1937316__following_each_maintenance_service_internal_quality_control_is_conducted_printed_and_appended_to_the_maintenance_report_including_documentation_noting_that_qc_was_performed_post_maintenance__yes
+                    iso_15189_clause_6_auditing {abstract}
+                        mandatory
+                            item_cat59__iss1__item5163169__the_laboratory_have_available_the_facilities_necessary_to_manage_and_perform_its_activities_clause6_1 {abstract}
+                                mandatory
+                                    Answers__cat59__iss1__item5163169 {abstract}
+                                        alternative
+                                            item_cat59__iss1__item5163169__the_laboratory_have_available_the_facilities_necessary_to_manage_and_perform_its_activities_clause6_1__no
+                                            item_cat59__iss1__item5163169__the_laboratory_have_available_the_facilities_necessary_to_manage_and_perform_its_activities_clause6_1__not_applicable
+                                            item_cat59__iss1__item5163169__the_laboratory_have_available_the_facilities_necessary_to_manage_and_perform_its_activities_clause6_1__yes
+                            item_cat59__iss1__item5170329__equipment_records_manufacturer_and_supplier_details_and_sufficient_information_to_uniquely_identify_each_item_of_equipment_including_software_and_firmware_clause_6_4_7_a {abstract}
+                                mandatory
+                                    Answers__cat59__iss1__item5170329 {abstract}
+                                        alternative
+                                            item_cat59__iss1__item5170329__equipment_records_manufacturer_and_supplier_details_and_sufficient_information_to_uniquely_identify_each_item_of_equipment_including_software_and_firmware_clause_6_4_7_a__no
+                                            item_cat59__iss1__item5170329__equipment_records_manufacturer_and_supplier_details_and_sufficient_information_to_uniquely_identify_each_item_of_equipment_including_software_and_firmware_clause_6_4_7_a__not_applicable
+                                            item_cat59__iss1__item5170329__equipment_records_manufacturer_and_supplier_details_and_sufficient_information_to_uniquely_identify_each_item_of_equipment_including_software_and_firmware_clause_6_4_7_a__yes
+                            item_cat59__iss1__item5170632__each_reagent_or_new_formulation_of_examination_kits_with_changes_in_reagents_or_procedure_or_a_new_lot_or_shipment_shall_be_verified_for_performance_before_placing_into_use_or_before_release_of_results_as_appropriate_clause_6_6_3 {abstract}
+                                mandatory
+                                    Answers__cat59__iss1__item5170632 {abstract}
+                                        alternative
+                                            item_cat59__iss1__item5170632__each_reagent_or_new_formulation_of_examination_kits_with_changes_in_reagents_or_procedure_or_a_new_lot_or_shipment_shall_be_verified_for_performance_before_placing_into_use_or_before_release_of_results_as_appropriate_clause_6_6_3__no
+                                            item_cat59__iss1__item5170632__each_reagent_or_new_formulation_of_examination_kits_with_changes_in_reagents_or_procedure_or_a_new_lot_or_shipment_shall_be_verified_for_performance_before_placing_into_use_or_before_release_of_results_as_appropriate_clause_6_6_3__not_applicable
+                                            item_cat59__iss1__item5170632__each_reagent_or_new_formulation_of_examination_kits_with_changes_in_reagents_or_procedure_or_a_new_lot_or_shipment_shall_be_verified_for_performance_before_placing_into_use_or_before_release_of_results_as_appropriate_clause_6_6_3__yes
+                            item_cat59__iss1__item5171298__a_list_of_all_referral_laboratories_and_consultants_shall_be_maintained_clause_6_8_2 {abstract}
+                                mandatory
+                                    Answers__cat59__iss1__item5171298 {abstract}
+                                        alternative
+                                            item_cat59__iss1__item5171298__a_list_of_all_referral_laboratories_and_consultants_shall_be_maintained_clause_6_8_2__no
+                                            item_cat59__iss1__item5171298__a_list_of_all_referral_laboratories_and_consultants_shall_be_maintained_clause_6_8_2__not_applicable
+                                            item_cat59__iss1__item5171298__a_list_of_all_referral_laboratories_and_consultants_shall_be_maintained_clause_6_8_2__yes
+                    microbiology {abstract}
+                        mandatory
+                            item_cat54__iss2__item241__the_work_area_is_disinfected_before_starting_work_and_after_completion_according_to_the_approved_procedure {abstract}
+                                mandatory
+                                    Answers__cat54__iss2__item241 {abstract}
+                                        alternative
+                                            item_cat54__iss2__item241__the_work_area_is_disinfected_before_starting_work_and_after_completion_according_to_the_approved_procedure__no
+                                            item_cat54__iss2__item241__the_work_area_is_disinfected_before_starting_work_and_after_completion_according_to_the_approved_procedure__not_applicable
+                                            item_cat54__iss2__item241__the_work_area_is_disinfected_before_starting_work_and_after_completion_according_to_the_approved_procedure__yes
+                            item_cat54__iss2__item243__the_laboratory_promptly_identifies_and_controls_any_contamination_incident_in_accordance_with_established_procedures_to_maintain_safety_and_quality_standards {abstract}
+                                mandatory
+                                    Answers__cat54__iss2__item243 {abstract}
+                                        alternative
+                                            item_cat54__iss2__item243__the_laboratory_promptly_identifies_and_controls_any_contamination_incident_in_accordance_with_established_procedures_to_maintain_safety_and_quality_standards__no
+                                            item_cat54__iss2__item243__the_laboratory_promptly_identifies_and_controls_any_contamination_incident_in_accordance_with_established_procedures_to_maintain_safety_and_quality_standards__not_applicable
+                                            item_cat54__iss2__item243__the_laboratory_promptly_identifies_and_controls_any_contamination_incident_in_accordance_with_established_procedures_to_maintain_safety_and_quality_standards__yes
+                            item_cat54__iss2__item244__the_laboratory_prepares_media_following_the_established_method_records_the_preparation_date_and_stores_them_under_appropriate_conditions_to_maintain_quality {abstract}
+                                mandatory
+                                    Answers__cat54__iss2__item244 {abstract}
+                                        alternative
+                                            item_cat54__iss2__item244__the_laboratory_prepares_media_following_the_established_method_records_the_preparation_date_and_stores_them_under_appropriate_conditions_to_maintain_quality__no
+                                            item_cat54__iss2__item244__the_laboratory_prepares_media_following_the_established_method_records_the_preparation_date_and_stores_them_under_appropriate_conditions_to_maintain_quality__not_applicable
+                                            item_cat54__iss2__item244__the_laboratory_prepares_media_following_the_established_method_records_the_preparation_date_and_stores_them_under_appropriate_conditions_to_maintain_quality__yes
+                            item_cat54__iss2__item245__media_preparation_is_documented_in_the_sterility_and_fertility_file_to_ensure_proper_traceability_and_quality_verification {abstract}
+                                mandatory
+                                    Answers__cat54__iss2__item245 {abstract}
+                                        alternative
+                                            item_cat54__iss2__item245__media_preparation_is_documented_in_the_sterility_and_fertility_file_to_ensure_proper_traceability_and_quality_verification__no
+                                            item_cat54__iss2__item245__media_preparation_is_documented_in_the_sterility_and_fertility_file_to_ensure_proper_traceability_and_quality_verification__not_applicable
+                                            item_cat54__iss2__item245__media_preparation_is_documented_in_the_sterility_and_fertility_file_to_ensure_proper_traceability_and_quality_verification__yes
+                            item_cat54__iss2__item4231100__antifungal_susceptibility_tests_are_performed_in_accordance_with_the_approved_procedure_available_on_the_document_system {abstract}
+                                mandatory
+                                    Answers__cat54__iss2__item4231100 {abstract}
+                                        alternative
+                                            item_cat54__iss2__item4231100__antifungal_susceptibility_tests_are_performed_in_accordance_with_the_approved_procedure_available_on_the_document_system__no
+                                            item_cat54__iss2__item4231100__antifungal_susceptibility_tests_are_performed_in_accordance_with_the_approved_procedure_available_on_the_document_system__not_applicable
+                                            item_cat54__iss2__item4231100__antifungal_susceptibility_tests_are_performed_in_accordance_with_the_approved_procedure_available_on_the_document_system__yes
+                    note {abstract}
+                        mandatory
+                            item_cat20__iss1__item3851__note_done {abstract}
+                                mandatory
+                                    Answers__cat20__iss1__item3851 {abstract}
+                                        alternative
+                                            item_cat20__iss1__item3851__note_done__no
+                                            item_cat20__iss1__item3851__note_done__not_applicable
+                                            item_cat20__iss1__item3851__note_done__yes
+                                            item_cat20__iss1__item3851__note_done__yes_no
+                    other_equipments_maintenance_and_manuals {abstract}
+                        mandatory
+                            item_cat12__iss1__item317__a_complete_and_approved_file_for_the_water_bath_device_is_available_including_all_required_information_such_as_calibration_records_maintenance_logs_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system {abstract}
+                                mandatory
+                                    Answers__cat12__iss1__item317 {abstract}
+                                        alternative
+                                            item_cat12__iss1__item317__a_complete_and_approved_file_for_the_water_bath_device_is_available_including_all_required_information_such_as_calibration_records_maintenance_logs_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system__no
+                                            item_cat12__iss1__item317__a_complete_and_approved_file_for_the_water_bath_device_is_available_including_all_required_information_such_as_calibration_records_maintenance_logs_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system__not_applicable
+                                            item_cat12__iss1__item317__a_complete_and_approved_file_for_the_water_bath_device_is_available_including_all_required_information_such_as_calibration_records_maintenance_logs_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system__yes
+                    pathology_lab {abstract}
+                        mandatory
+                            item_cat46__iss2__item3606__the_laboratory_supervisor_monitors_the_auto_generated_expired_materials_report_in_the_purchasing_system_documents_expired_items_using_the_designated_forms_ensures_submission_to_the_disposal_committee_and_updates_the_item_status_in_the_system_after_disposal {abstract}
+                                mandatory
+                                    Answers__cat46__iss2__item3606 {abstract}
+                                        alternative
+                                            item_cat46__iss2__item3606__the_laboratory_supervisor_monitors_the_auto_generated_expired_materials_report_in_the_purchasing_system_documents_expired_items_using_the_designated_forms_ensures_submission_to_the_disposal_committee_and_updates_the_item_status_in_the_system_after_disposal__no
+                                            item_cat46__iss2__item3606__the_laboratory_supervisor_monitors_the_auto_generated_expired_materials_report_in_the_purchasing_system_documents_expired_items_using_the_designated_forms_ensures_submission_to_the_disposal_committee_and_updates_the_item_status_in_the_system_after_disposal__not_applicable
+                                            item_cat46__iss2__item3606__the_laboratory_supervisor_monitors_the_auto_generated_expired_materials_report_in_the_purchasing_system_documents_expired_items_using_the_designated_forms_ensures_submission_to_the_disposal_committee_and_updates_the_item_status_in_the_system_after_disposal__yes
+                            item_cat46__iss2__item102530__pathology_work_documents_include_the_physician_s_examination_request_form_which_shall_be_archived_for_a_minimum_period_of_three_years_in_accordance_with_the_approved_system_verification_of_five_cases_confirmed_compliance_with_the_required_retention_period_and_proper_document_preservation {abstract}
+                                mandatory
+                                    Answers__cat46__iss2__item102530 {abstract}
+                                        alternative
+                                            item_cat46__iss2__item102530__pathology_work_documents_include_the_physician_s_examination_request_form_which_shall_be_archived_for_a_minimum_period_of_three_years_in_accordance_with_the_approved_system_verification_of_five_cases_confirmed_compliance_with_the_required_retention_period_and_proper_document_preservation__no
+                                            item_cat46__iss2__item102530__pathology_work_documents_include_the_physician_s_examination_request_form_which_shall_be_archived_for_a_minimum_period_of_three_years_in_accordance_with_the_approved_system_verification_of_five_cases_confirmed_compliance_with_the_required_retention_period_and_proper_document_preservation__not_applicable
+                                            item_cat46__iss2__item102530__pathology_work_documents_include_the_physician_s_examination_request_form_which_shall_be_archived_for_a_minimum_period_of_three_years_in_accordance_with_the_approved_system_verification_of_five_cases_confirmed_compliance_with_the_required_retention_period_and_proper_document_preservation__yes
+                            item_cat46__iss2__item102565__pathology_results_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_5_to_7_days_for_most_samples_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy {abstract}
+                                mandatory
+                                    Answers__cat46__iss2__item102565 {abstract}
+                                        alternative
+                                            item_cat46__iss2__item102565__pathology_results_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_5_to_7_days_for_most_samples_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy__no
+                                            item_cat46__iss2__item102565__pathology_results_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_5_to_7_days_for_most_samples_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy__not_applicable
+                                            item_cat46__iss2__item102565__pathology_results_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_5_to_7_days_for_most_samples_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy__yes
+                            item_cat46__iss2__item102566__pathology_results_requiring_additional_examinations_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_7_to_10_days_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy {abstract}
+                                mandatory
+                                    Answers__cat46__iss2__item102566 {abstract}
+                                        alternative
+                                            item_cat46__iss2__item102566__pathology_results_requiring_additional_examinations_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_7_to_10_days_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy__no
+                                            item_cat46__iss2__item102566__pathology_results_requiring_additional_examinations_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_7_to_10_days_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy__not_applicable
+                                            item_cat46__iss2__item102566__pathology_results_requiring_additional_examinations_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_7_to_10_days_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy__yes
+                            item_cat46__iss2__item102577__biopsy_collection_instruments_shall_be_properly_sterilized_prior_to_use_in_accordance_with_the_approved_procedures_to_ensure_they_are_free_from_contamination_and_to_maintain_both_sample_integrity_and_patient_safety {abstract}
+                                mandatory
+                                    Answers__cat46__iss2__item102577 {abstract}
+                                        alternative
+                                            item_cat46__iss2__item102577__biopsy_collection_instruments_shall_be_properly_sterilized_prior_to_use_in_accordance_with_the_approved_procedures_to_ensure_they_are_free_from_contamination_and_to_maintain_both_sample_integrity_and_patient_safety__no
+                                            item_cat46__iss2__item102577__biopsy_collection_instruments_shall_be_properly_sterilized_prior_to_use_in_accordance_with_the_approved_procedures_to_ensure_they_are_free_from_contamination_and_to_maintain_both_sample_integrity_and_patient_safety__not_applicable
+                                            item_cat46__iss2__item102577__biopsy_collection_instruments_shall_be_properly_sterilized_prior_to_use_in_accordance_with_the_approved_procedures_to_ensure_they_are_free_from_contamination_and_to_maintain_both_sample_integrity_and_patient_safety__yes
+                    phlebotomy {abstract}
+                        mandatory
+                            item_cat25__iss2__item40__the_phlebotomist_disinfects_the_puncture_site_or_applies_an_appropriate_protective_cover_before_performing_the_blood_draw {abstract}
+                                mandatory
+                                    Answers__cat25__iss2__item40 {abstract}
+                                        alternative
+                                            item_cat25__iss2__item40__the_phlebotomist_disinfects_the_puncture_site_or_applies_an_appropriate_protective_cover_before_performing_the_blood_draw__no
+                                            item_cat25__iss2__item40__the_phlebotomist_disinfects_the_puncture_site_or_applies_an_appropriate_protective_cover_before_performing_the_blood_draw__not_applicable
+                                            item_cat25__iss2__item40__the_phlebotomist_disinfects_the_puncture_site_or_applies_an_appropriate_protective_cover_before_performing_the_blood_draw__yes
+                            item_cat25__iss2__item42__the_phlebotomist_demonstrates_skill_and_competency_in_performing_blood_collection_procedures {abstract}
+                                mandatory
+                                    Answers__cat25__iss2__item42 {abstract}
+                                        alternative
+                                            item_cat25__iss2__item42__the_phlebotomist_demonstrates_skill_and_competency_in_performing_blood_collection_procedures__good_taking_blood_from_first_time
+                                            item_cat25__iss2__item42__the_phlebotomist_demonstrates_skill_and_competency_in_performing_blood_collection_procedures__need_imoprove_unable_to_draw_by_1_trail
+                                            item_cat25__iss2__item42__the_phlebotomist_demonstrates_skill_and_competency_in_performing_blood_collection_procedures__worst_unable_to_draw_blood_by_2_trials
+                            item_cat25__iss2__item44__phlebotomy_staff_follow_the_correct_order_of_draw_when_filling_blood_collection_tubes_in_accordance_with_laboratory_policy {abstract}
+                                mandatory
+                                    Answers__cat25__iss2__item44 {abstract}
+                                        alternative
+                                            item_cat25__iss2__item44__phlebotomy_staff_follow_the_correct_order_of_draw_when_filling_blood_collection_tubes_in_accordance_with_laboratory_policy__no
+                                            item_cat25__iss2__item44__phlebotomy_staff_follow_the_correct_order_of_draw_when_filling_blood_collection_tubes_in_accordance_with_laboratory_policy__not_applicable
+                                            item_cat25__iss2__item44__phlebotomy_staff_follow_the_correct_order_of_draw_when_filling_blood_collection_tubes_in_accordance_with_laboratory_policy__yes
+                            item_cat25__iss2__item48__phlebotomy_staff_must_label_blood_tubes_including_barcode_application_prior_to_leaving_the_phlebotomy_room_to_ensure_correct_sample_identification {abstract}
+                                mandatory
+                                    Answers__cat25__iss2__item48 {abstract}
+                                        alternative
+                                            item_cat25__iss2__item48__phlebotomy_staff_must_label_blood_tubes_including_barcode_application_prior_to_leaving_the_phlebotomy_room_to_ensure_correct_sample_identification__no
+                                            item_cat25__iss2__item48__phlebotomy_staff_must_label_blood_tubes_including_barcode_application_prior_to_leaving_the_phlebotomy_room_to_ensure_correct_sample_identification__not_applicable
+                                            item_cat25__iss2__item48__phlebotomy_staff_must_label_blood_tubes_including_barcode_application_prior_to_leaving_the_phlebotomy_room_to_ensure_correct_sample_identification__yes
+                            item_cat25__iss2__item1869094__completion_of_the_blood_collection_room_readiness_form_in_a_complete_and_accurate_manner_in_accordance_with_the_approved_procedure {abstract}
+                                mandatory
+                                    Answers__cat25__iss2__item1869094 {abstract}
+                                        alternative
+                                            item_cat25__iss2__item1869094__completion_of_the_blood_collection_room_readiness_form_in_a_complete_and_accurate_manner_in_accordance_with_the_approved_procedure__no
+                                            item_cat25__iss2__item1869094__completion_of_the_blood_collection_room_readiness_form_in_a_complete_and_accurate_manner_in_accordance_with_the_approved_procedure__not_applicable
+                                            item_cat25__iss2__item1869094__completion_of_the_blood_collection_room_readiness_form_in_a_complete_and_accurate_manner_in_accordance_with_the_approved_procedure__yes
+                    reception {abstract}
+                        mandatory
+                            item_cat65__iss5__item15__test_results_are_released_only_to_the_authorized_client_after_proper_identity_verification {abstract}
+                                mandatory
+                                    Answers__cat65__iss5__item15 {abstract}
+                                        alternative
+                                            item_cat65__iss5__item15__test_results_are_released_only_to_the_authorized_client_after_proper_identity_verification___80
+                                            item_cat65__iss5__item15__test_results_are_released_only_to_the_authorized_client_after_proper_identity_verification___80_90
+                                            item_cat65__iss5__item15__test_results_are_released_only_to_the_authorized_client_after_proper_identity_verification___90
+                            item_cat65__iss5__item16__all_required_patient_information_is_accurately_entered_including_full_name_age_telephone_number_and_when_available_national_id_number {abstract}
+                                mandatory
+                                    Answers__cat65__iss5__item16 {abstract}
+                                        alternative
+                                            item_cat65__iss5__item16__all_required_patient_information_is_accurately_entered_including_full_name_age_telephone_number_and_when_available_national_id_number___0_missed
+                                            item_cat65__iss5__item16__all_required_patient_information_is_accurately_entered_including_full_name_age_telephone_number_and_when_available_national_id_number___1_missed
+                                            item_cat65__iss5__item16__all_required_patient_information_is_accurately_entered_including_full_name_age_telephone_number_and_when_available_national_id_number___2_missed
+                                            item_cat65__iss5__item16__all_required_patient_information_is_accurately_entered_including_full_name_age_telephone_number_and_when_available_national_id_number___3_missed
+                    routine {abstract}
+                        mandatory
+                            item_cat28__iss2__item39__staff_adhere_to_wearing_gloves_while_working_in_the_laboratory_sections_in_accordance_with_safety_requirements {abstract}
+                                mandatory
+                                    Answers__cat28__iss2__item39 {abstract}
+                                        alternative
+                                            item_cat28__iss2__item39__staff_adhere_to_wearing_gloves_while_working_in_the_laboratory_sections_in_accordance_with_safety_requirements__no
+                                            item_cat28__iss2__item39__staff_adhere_to_wearing_gloves_while_working_in_the_laboratory_sections_in_accordance_with_safety_requirements__not_applicable
+                                            item_cat28__iss2__item39__staff_adhere_to_wearing_gloves_while_working_in_the_laboratory_sections_in_accordance_with_safety_requirements__yes
+                            item_cat28__iss2__item213__the_employee_adheres_to_the_approved_turnaround_time_for_issuing_semen_analysis_results_tat_and_compliance_with_the_defined_duration_is_verified {abstract}
+                                mandatory
+                                    Answers__cat28__iss2__item213 {abstract}
+                                        alternative
+                                            item_cat28__iss2__item213__the_employee_adheres_to_the_approved_turnaround_time_for_issuing_semen_analysis_results_tat_and_compliance_with_the_defined_duration_is_verified__less_than_3_hours
+                                            item_cat28__iss2__item213__the_employee_adheres_to_the_approved_turnaround_time_for_issuing_semen_analysis_results_tat_and_compliance_with_the_defined_duration_is_verified__more_than_3_hours
+                                            item_cat28__iss2__item213__the_employee_adheres_to_the_approved_turnaround_time_for_issuing_semen_analysis_results_tat_and_compliance_with_the_defined_duration_is_verified__not_applicable
+                            item_cat28__iss2__item1938080__the_semen_software_is_used_to_perform_semen_analysis_and_calculate_the_total_sperm_count_in_accordance_with_the_approved_procedure {abstract}
+                                mandatory
+                                    Answers__cat28__iss2__item1938080 {abstract}
+                                        alternative
+                                            item_cat28__iss2__item1938080__the_semen_software_is_used_to_perform_semen_analysis_and_calculate_the_total_sperm_count_in_accordance_with_the_approved_procedure__no
+                                            item_cat28__iss2__item1938080__the_semen_software_is_used_to_perform_semen_analysis_and_calculate_the_total_sperm_count_in_accordance_with_the_approved_procedure__not_applicable
+                                            item_cat28__iss2__item1938080__the_semen_software_is_used_to_perform_semen_analysis_and_calculate_the_total_sperm_count_in_accordance_with_the_approved_procedure__yes
+        optional
+            AuditPlan {abstract}
+                alternative
+                    iso15189_clause_compliance_audit
+                    lis_formula_verification_audit
+                    quarter_3
+                    quarter_4
+            RelatedVisit {abstract}
+            AuditorCapabilities {abstract}
+                optional
+                    iso_auditor
+                    micro_auditor
+                    path_auditor
+                    senior_auditor
+
+constraints
+    InternalAuditSystem => !item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol__satisfactiry_dust
+    InternalAuditSystem => AuditPlan
+    item_cat59__iss1__item5170632__each_reagent_or_new_formulation_of_examination_kits_with_changes_in_reagents_or_procedure_or_a_new_lot_or_shipment_shall_be_verified_for_performance_before_placing_into_use_or_before_release_of_results_as_appropriate_clause_6_6_3__yes => InternalAuditSystem
+    path_active <=> (medicare_12_branch_mb | medicare_50_branch__28 | medicare_7_branch_mn)
+    planned <=> AuditPlan
+    re_evaluate => RelatedVisit
+    !re_evaluate => !RelatedVisit
+    iso_15189_clause_6_auditing => iso_active
+    !iso_active => !iso_15189_clause_6_auditing
+    item_cat67__iss3__item121__an_annual_review_of_sample_storage_check_is_conducted_in_iso_accredited_branches_to_verify_adherence_to_established_specimen_storage_duration_standards => iso_active
+    !iso_active => !item_cat67__iss3__item121__an_annual_review_of_sample_storage_check_is_conducted_in_iso_accredited_branches_to_verify_adherence_to_established_specimen_storage_duration_standards
+    item_cat55__iss8__item1936681__riqas_results_are_regularly_reviewed_and_the_proficiency_failure_report_is_completed_for_any_unacceptable_result_in_accordance_with_the_approved_procedure => iso_active
+    !iso_active => !item_cat55__iss8__item1936681__riqas_results_are_regularly_reviewed_and_the_proficiency_failure_report_is_completed_for_any_unacceptable_result_in_accordance_with_the_approved_procedure
+    iso_15189_clause_6_auditing => iso_auditor
+    !iso_auditor => !iso_15189_clause_6_auditing
+    microbiology => micro_auditor
+    !micro_auditor => !microbiology
+    pathology_lab => path_auditor
+    !path_auditor => !pathology_lab

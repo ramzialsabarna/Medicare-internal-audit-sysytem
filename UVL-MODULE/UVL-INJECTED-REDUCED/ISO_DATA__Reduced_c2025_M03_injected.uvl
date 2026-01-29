@@ -1,0 +1,166 @@
+namespace MedicareAuditStructure
+
+features
+    InternalAuditSystem {abstract}
+        mandatory
+            BranchCapabilities {abstract}
+                optional
+                    iso_active
+                    micro_active
+                    path_active
+            AuditType {abstract}
+                alternative
+                    planned
+                    re_evaluate
+                    unplanned
+            AuditedEntity {abstract}
+                alternative
+                    medicare_1021_branch__35
+                    medicare_1081_branch__32
+                    medicare_10_branch_mj
+                    medicare_1101_branch_y2
+                    medicare_11_branch_mm
+                    medicare_12_branch_mb
+                    medicare_13_branch_mt
+                    medicare_15_branch_mg
+                    medicare_17_branch__33
+                    medicare_18_branch_mk
+                    medicare_20_branch__31
+                    medicare_21_branch_md
+                    medicare_22_branch__29
+                    medicare_3_branch_mc
+                    medicare_40_branch__34
+                    medicare_41_branch_mw
+                    medicare_42_branch_mo
+                    medicare_4_branch_mr
+                    medicare_50_branch__28
+                    medicare_51_branch__27
+                    medicare_53_branch_mp
+                    medicare_54_branch_mu
+                    medicare_55_branch_mx
+                    medicare_58_branch_mq
+                    medicare_59_branch_mf
+                    medicare_5_branch_mh
+                    medicare_60_branch_my
+                    medicare_61_branch_mi
+                    medicare_6_branch_ml
+                    medicare_7_branch_mn
+                    medicare_8_branch_mz
+                    medicare_961_branch__30
+                    medicare_9_branch_ms
+            AuditScope {abstract}
+                or
+                    hematology {abstract}
+                        mandatory
+                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions {abstract}
+                                mandatory
+                                    Answers__cat67__iss3__item1866071 {abstract}
+                                        alternative
+                                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions__no
+                                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions__not_applicable
+                                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions__yes
+                    iso_15189_clause_6_auditing {abstract}
+                        mandatory
+                            item_cat59__iss1__item5163169__the_laboratory_have_available_the_facilities_necessary_to_manage_and_perform_its_activities_clause6_1 {abstract}
+                                mandatory
+                                    Answers__cat59__iss1__item5163169 {abstract}
+                                        alternative
+                                            item_cat59__iss1__item5163169__the_laboratory_have_available_the_facilities_necessary_to_manage_and_perform_its_activities_clause6_1__no
+                                            item_cat59__iss1__item5163169__the_laboratory_have_available_the_facilities_necessary_to_manage_and_perform_its_activities_clause6_1__not_applicable
+                                            item_cat59__iss1__item5163169__the_laboratory_have_available_the_facilities_necessary_to_manage_and_perform_its_activities_clause6_1__yes
+                            item_cat59__iss1__item5171298__a_list_of_all_referral_laboratories_and_consultants_shall_be_maintained_clause_6_8_2 {abstract}
+                                mandatory
+                                    Answers__cat59__iss1__item5171298 {abstract}
+                                        alternative
+                                            item_cat59__iss1__item5171298__a_list_of_all_referral_laboratories_and_consultants_shall_be_maintained_clause_6_8_2__no
+                                            item_cat59__iss1__item5171298__a_list_of_all_referral_laboratories_and_consultants_shall_be_maintained_clause_6_8_2__not_applicable
+                                            item_cat59__iss1__item5171298__a_list_of_all_referral_laboratories_and_consultants_shall_be_maintained_clause_6_8_2__yes
+                    lab_senior {abstract}
+                        mandatory
+                            item_cat34__iss2__item3570__verification_confirms_that_the_laboratory_supervisor_performs_routine_monitoring_validation_and_documentation_of_thermal_device_performance_to_ensure_accuracy_and_compliance_with_temperature_control_requirements {abstract}
+                                mandatory
+                                    Answers__cat34__iss2__item3570 {abstract}
+                                        alternative
+                                            item_cat34__iss2__item3570__verification_confirms_that_the_laboratory_supervisor_performs_routine_monitoring_validation_and_documentation_of_thermal_device_performance_to_ensure_accuracy_and_compliance_with_temperature_control_requirements__no
+                                            item_cat34__iss2__item3570__verification_confirms_that_the_laboratory_supervisor_performs_routine_monitoring_validation_and_documentation_of_thermal_device_performance_to_ensure_accuracy_and_compliance_with_temperature_control_requirements__not_applicable
+                                            item_cat34__iss2__item3570__verification_confirms_that_the_laboratory_supervisor_performs_routine_monitoring_validation_and_documentation_of_thermal_device_performance_to_ensure_accuracy_and_compliance_with_temperature_control_requirements__yes
+                            item_cat34__iss2__item3594__verification_confirms_that_the_laboratory_supervisor_oversees_the_correction_of_incorrect_test_results_ensures_timely_delivery_of_corrected_reports_to_relevant_stakeholders_and_maintains_complete_documentation_of_the_correction_and_communication_process {abstract}
+                                mandatory
+                                    Answers__cat34__iss2__item3594 {abstract}
+                                        alternative
+                                            item_cat34__iss2__item3594__verification_confirms_that_the_laboratory_supervisor_oversees_the_correction_of_incorrect_test_results_ensures_timely_delivery_of_corrected_reports_to_relevant_stakeholders_and_maintains_complete_documentation_of_the_correction_and_communication_process__no
+                                            item_cat34__iss2__item3594__verification_confirms_that_the_laboratory_supervisor_oversees_the_correction_of_incorrect_test_results_ensures_timely_delivery_of_corrected_reports_to_relevant_stakeholders_and_maintains_complete_documentation_of_the_correction_and_communication_process__not_applicable
+                                            item_cat34__iss2__item3594__verification_confirms_that_the_laboratory_supervisor_oversees_the_correction_of_incorrect_test_results_ensures_timely_delivery_of_corrected_reports_to_relevant_stakeholders_and_maintains_complete_documentation_of_the_correction_and_communication_process__yes
+                            item_cat34__iss2__item3617__the_laboratory_supervisor_monitors_referring_physicians_ensuring_proper_communication_addressing_concerns_and_maintaining_high_quality_service_for_referred_patients {abstract}
+                                mandatory
+                                    Answers__cat34__iss2__item3617 {abstract}
+                                        alternative
+                                            item_cat34__iss2__item3617__the_laboratory_supervisor_monitors_referring_physicians_ensuring_proper_communication_addressing_concerns_and_maintaining_high_quality_service_for_referred_patients__no
+                                            item_cat34__iss2__item3617__the_laboratory_supervisor_monitors_referring_physicians_ensuring_proper_communication_addressing_concerns_and_maintaining_high_quality_service_for_referred_patients__not_applicable
+                                            item_cat34__iss2__item3617__the_laboratory_supervisor_monitors_referring_physicians_ensuring_proper_communication_addressing_concerns_and_maintaining_high_quality_service_for_referred_patients__yes
+                    note {abstract}
+                        mandatory
+                            item_cat20__iss1__item3851__note_done {abstract}
+                                mandatory
+                                    Answers__cat20__iss1__item3851 {abstract}
+                                        alternative
+                                            item_cat20__iss1__item3851__note_done__no
+                                            item_cat20__iss1__item3851__note_done__not_applicable
+                                            item_cat20__iss1__item3851__note_done__yes
+                    phlebotomy {abstract}
+                        mandatory
+                            item_cat25__iss2__item48__phlebotomy_staff_must_label_blood_tubes_including_barcode_application_prior_to_leaving_the_phlebotomy_room_to_ensure_correct_sample_identification {abstract}
+                                mandatory
+                                    Answers__cat25__iss2__item48 {abstract}
+                                        alternative
+                                            item_cat25__iss2__item48__phlebotomy_staff_must_label_blood_tubes_including_barcode_application_prior_to_leaving_the_phlebotomy_room_to_ensure_correct_sample_identification__no
+                                            item_cat25__iss2__item48__phlebotomy_staff_must_label_blood_tubes_including_barcode_application_prior_to_leaving_the_phlebotomy_room_to_ensure_correct_sample_identification__not_applicable
+                                            item_cat25__iss2__item48__phlebotomy_staff_must_label_blood_tubes_including_barcode_application_prior_to_leaving_the_phlebotomy_room_to_ensure_correct_sample_identification__yes
+                    pipette_calibration {abstract}
+                        mandatory
+                            item_cat22__iss1__item723580__pipette_cal {abstract}
+                                mandatory
+                                    Answers__cat22__iss1__item723580 {abstract}
+                                        alternative
+                                            item_cat22__iss1__item723580__pipette_cal__no
+                                            item_cat22__iss1__item723580__pipette_cal__not_applicable
+                                            item_cat22__iss1__item723580__pipette_cal__yes
+                            item_cat22__iss1__item723581__pipette_certification {abstract}
+                                mandatory
+                                    Answers__cat22__iss1__item723581 {abstract}
+                                        alternative
+                                            item_cat22__iss1__item723581__pipette_certification__no
+                                            item_cat22__iss1__item723581__pipette_certification__not_applicable
+                                            item_cat22__iss1__item723581__pipette_certification__yes
+        optional
+            AuditPlan {abstract}
+                alternative
+                    iso15189_clause_compliance_audit
+                    note_followup
+                    quarter_1
+                    quarter_2
+                    quarter_3
+                    quarter_4
+                    standard_thermometer_certificate_renewal
+            RelatedVisit {abstract}
+            AuditorCapabilities {abstract}
+                optional
+                    iso_auditor
+                    micro_auditor
+                    path_auditor
+                    senior_auditor
+
+constraints
+    InternalAuditSystem => !quarter_3
+    InternalAuditSystem => RelatedVisit
+    medicare_55_branch_mx => InternalAuditSystem
+    iso_active <=> (medicare_13_branch_mt | medicare_21_branch_md | medicare_4_branch_mr | medicare_6_branch_ml)
+    micro_active <=> (medicare_10_branch_mj | medicare_11_branch_mm | medicare_12_branch_mb | medicare_13_branch_mt | medicare_15_branch_mg | medicare_18_branch_mk | medicare_20_branch__31 | medicare_22_branch__29 | medicare_54_branch_mu | medicare_55_branch_mx | medicare_6_branch_ml | medicare_7_branch_mn | medicare_8_branch_mz)
+    path_active <=> (medicare_12_branch_mb | medicare_50_branch__28 | medicare_7_branch_mn)
+    planned <=> AuditPlan
+    re_evaluate => RelatedVisit
+    !re_evaluate => !RelatedVisit
+    iso_15189_clause_6_auditing => iso_active
+    !iso_active => !iso_15189_clause_6_auditing
+    iso_15189_clause_6_auditing => iso_auditor
+    !iso_auditor => !iso_15189_clause_6_auditing

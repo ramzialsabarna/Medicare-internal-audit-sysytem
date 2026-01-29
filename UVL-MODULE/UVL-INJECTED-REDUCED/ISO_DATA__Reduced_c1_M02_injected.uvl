@@ -1,0 +1,127 @@
+namespace MedicareAuditStructure
+
+features
+    InternalAuditSystem {abstract}
+        mandatory
+            BranchCapabilities {abstract}
+                optional
+                    iso_active
+                    micro_active
+                    path_active
+            AuditType {abstract}
+                alternative
+                    planned
+                    re_evaluate
+                    unplanned
+            AuditedEntity {abstract}
+                alternative
+                    medicare_1021_branch__35
+                    medicare_10_branch_mj
+                    medicare_11_branch_mm
+                    medicare_12_branch_mb
+                    medicare_13_branch_mt
+                    medicare_15_branch_mg
+                    medicare_17_branch__33
+                    medicare_18_branch_mk
+                    medicare_20_branch__31
+                    medicare_21_branch_md
+                    medicare_22_branch__29
+                    medicare_3_branch_mc
+                    medicare_40_branch__34
+                    medicare_41_branch_mw
+                    medicare_42_branch_mo
+                    medicare_4_branch_mr
+                    medicare_50_branch__28
+                    medicare_53_branch_mp
+                    medicare_54_branch_mu
+                    medicare_55_branch_mx
+                    medicare_58_branch_mq
+                    medicare_59_branch_mf
+                    medicare_5_branch_mh
+                    medicare_60_branch_my
+                    medicare_61_branch_mi
+                    medicare_6_branch_ml
+                    medicare_7_branch_mn
+                    medicare_8_branch_mz
+                    medicare_961_branch__30
+                    medicare_9_branch_ms
+            AuditScope {abstract}
+                or
+                    hematology {abstract}
+                        mandatory
+                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions {abstract}
+                                mandatory
+                                    Answers__cat67__iss3__item1866071 {abstract}
+                                        alternative
+                                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions__no
+                                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions__not_applicable
+                                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions__yes
+                                            item_cat67__iss3__item1866071__the_esr_test_is_performed_in_a_manner_that_minimizes_influencing_factors_including_using_a_level_surface_avoiding_vibrations_and_maintaining_appropriate_temperature_conditions__yes_no
+                    immunoanalyzer {abstract}
+                        mandatory
+                            item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual {abstract}
+                                mandatory
+                                    Answers__cat35__iss3__item100 {abstract}
+                                        alternative
+                                            item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual__no
+                                            item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual__not_applicable
+                                            item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual__yes
+                            item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol {abstract}
+                                mandatory
+                                    Answers__cat35__iss3__item230 {abstract}
+                                        alternative
+                                            item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol__bad_blood
+                                            item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol__good_clean
+                                            item_cat35__iss3__item230__verification_is_performed_to_ensure_that_the_section_area_is_cleaned_routinely_following_the_established_cleaning_protocol__satisfactiry_dust
+                    pathology_lab {abstract}
+                        mandatory
+                            item_cat46__iss2__item102565__pathology_results_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_5_to_7_days_for_most_samples_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy {abstract}
+                                mandatory
+                                    Answers__cat46__iss2__item102565 {abstract}
+                                        alternative
+                                            item_cat46__iss2__item102565__pathology_results_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_5_to_7_days_for_most_samples_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy__no
+                                            item_cat46__iss2__item102565__pathology_results_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_5_to_7_days_for_most_samples_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy__not_applicable
+                                            item_cat46__iss2__item102565__pathology_results_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_5_to_7_days_for_most_samples_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy__yes
+                    serology {abstract}
+                        mandatory
+                            item_cat29__iss2__item222__medical_waste_is_disposed_of_according_to_the_approved_procedure_using_designated_containers_and_following_biosafety_requirements {abstract}
+                                mandatory
+                                    Answers__cat29__iss2__item222 {abstract}
+                                        alternative
+                                            item_cat29__iss2__item222__medical_waste_is_disposed_of_according_to_the_approved_procedure_using_designated_containers_and_following_biosafety_requirements__no
+                                            item_cat29__iss2__item222__medical_waste_is_disposed_of_according_to_the_approved_procedure_using_designated_containers_and_following_biosafety_requirements__not_applicable
+                                            item_cat29__iss2__item222__medical_waste_is_disposed_of_according_to_the_approved_procedure_using_designated_containers_and_following_biosafety_requirements__yes
+                            item_cat29__iss2__item1937936__the_laboratory_performs_brucella_quality_control_as_per_the_established_sop_and_records_results_on_the_approved_control_form {abstract}
+                                mandatory
+                                    Answers__cat29__iss2__item1937936 {abstract}
+                                        alternative
+                                            item_cat29__iss2__item1937936__the_laboratory_performs_brucella_quality_control_as_per_the_established_sop_and_records_results_on_the_approved_control_form__no
+                                            item_cat29__iss2__item1937936__the_laboratory_performs_brucella_quality_control_as_per_the_established_sop_and_records_results_on_the_approved_control_form__not_applicable
+                                            item_cat29__iss2__item1937936__the_laboratory_performs_brucella_quality_control_as_per_the_established_sop_and_records_results_on_the_approved_control_form__yes
+        optional
+            AuditPlan {abstract}
+                alternative
+                    iso15189_clause_compliance_audit
+                    note_followup
+                    quarter_1
+                    quarter_2
+            RelatedVisit {abstract}
+            AuditorCapabilities {abstract}
+                optional
+                    iso_auditor
+                    micro_auditor
+                    path_auditor
+                    senior_auditor
+
+constraints
+    InternalAuditSystem => !item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual__yes
+    InternalAuditSystem => RelatedVisit
+    AuditedEntity => InternalAuditSystem
+    iso_active <=> (medicare_13_branch_mt | medicare_21_branch_md | medicare_4_branch_mr | medicare_6_branch_ml)
+    micro_active <=> (medicare_10_branch_mj | medicare_11_branch_mm | medicare_12_branch_mb | medicare_13_branch_mt | medicare_15_branch_mg | medicare_18_branch_mk | medicare_20_branch__31 | medicare_22_branch__29 | medicare_54_branch_mu | medicare_55_branch_mx | medicare_6_branch_ml | medicare_7_branch_mn | medicare_8_branch_mz)
+    path_active <=> (medicare_12_branch_mb | medicare_50_branch__28 | medicare_7_branch_mn)
+    planned <=> AuditPlan
+    re_evaluate => RelatedVisit
+    !re_evaluate => !RelatedVisit
+    pathology_lab => path_auditor
+    !path_auditor => !pathology_lab
