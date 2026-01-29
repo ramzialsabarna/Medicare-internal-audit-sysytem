@@ -1,0 +1,82 @@
+namespace MedicareAuditStructure
+
+features
+    InternalAuditSystem {abstract}
+        mandatory
+            BranchCapabilities {abstract}
+                optional
+                    iso_active
+                    micro_active
+                    path_active
+            AuditType {abstract}
+                alternative
+                    planned
+                    re_evaluate
+            AuditedEntity {abstract}
+                alternative
+                    medicare_1021_branch__35
+                    medicare_10_branch_mj
+                    medicare_11_branch_mm
+                    medicare_12_branch_mb
+                    medicare_13_branch_mt
+                    medicare_17_branch__33
+                    medicare_18_branch_mk
+                    medicare_20_branch__31
+                    medicare_21_branch_md
+                    medicare_22_branch__29
+                    medicare_3_branch_mc
+                    medicare_40_branch__34
+                    medicare_41_branch_mw
+                    medicare_42_branch_mo
+                    medicare_4_branch_mr
+                    medicare_50_branch__28
+                    medicare_53_branch_mp
+                    medicare_54_branch_mu
+                    medicare_55_branch_mx
+                    medicare_58_branch_mq
+                    medicare_59_branch_mf
+                    medicare_5_branch_mh
+                    medicare_60_branch_my
+                    medicare_61_branch_mi
+                    medicare_6_branch_ml
+                    medicare_8_branch_mz
+                    medicare_961_branch__30
+                    medicare_9_branch_ms
+            AuditScope {abstract}
+                or
+                    immunoanalyzer {abstract}
+                        mandatory
+                            item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual {abstract}
+                                mandatory
+                                    Answers__cat35__iss3__item100 {abstract}
+                                        alternative
+                                            item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual__no
+                                            item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual__not_applicable
+                                            item_cat35__iss3__item100__a_complete_and_well_organized_device_file_is_maintained_comprising_the_electronic_iso_record_device_name_number_serial_number_etc_and_the_physical_file_containing_maintenance_reports_service_documentation_and_the_device_manual__yes
+                    serology {abstract}
+                        mandatory
+                            item_cat29__iss2__item222__medical_waste_is_disposed_of_according_to_the_approved_procedure_using_designated_containers_and_following_biosafety_requirements {abstract}
+                                mandatory
+                                    Answers__cat29__iss2__item222 {abstract}
+                                        alternative
+                                            item_cat29__iss2__item222__medical_waste_is_disposed_of_according_to_the_approved_procedure_using_designated_containers_and_following_biosafety_requirements__no
+                                            item_cat29__iss2__item222__medical_waste_is_disposed_of_according_to_the_approved_procedure_using_designated_containers_and_following_biosafety_requirements__not_applicable
+                                            item_cat29__iss2__item222__medical_waste_is_disposed_of_according_to_the_approved_procedure_using_designated_containers_and_following_biosafety_requirements__yes
+        optional
+            AuditPlan {abstract}
+                alternative
+                    quarter_1
+                    quarter_2
+            RelatedVisit {abstract}
+            AuditorCapabilities {abstract}
+                optional
+                    iso_auditor
+                    micro_auditor
+                    path_auditor
+                    senior_auditor
+
+constraints
+    iso_active <=> (medicare_13_branch_mt | medicare_21_branch_md | medicare_4_branch_mr | medicare_6_branch_ml)
+    planned <=> AuditPlan
+    re_evaluate => RelatedVisit
+    !re_evaluate => !RelatedVisit

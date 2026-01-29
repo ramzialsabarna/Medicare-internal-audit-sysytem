@@ -1,0 +1,94 @@
+namespace MedicareAuditStructure
+
+features
+    InternalAuditSystem {abstract}
+        mandatory
+            BranchCapabilities {abstract}
+                optional
+                    iso_active
+                    micro_active
+                    path_active
+            AuditType {abstract}
+                alternative
+                    planned
+                    re_evaluate
+            AuditedEntity {abstract}
+                alternative
+                    medicare_1101_branch_y2
+                    medicare_11_branch_mm
+                    medicare_17_branch__33
+                    medicare_18_branch_mk
+                    medicare_20_branch__31
+                    medicare_3_branch_mc
+                    medicare_41_branch_mw
+                    medicare_42_branch_mo
+                    medicare_4_branch_mr
+                    medicare_54_branch_mu
+                    medicare_55_branch_mx
+                    medicare_58_branch_mq
+                    medicare_5_branch_mh
+                    medicare_7_branch_mn
+                    medicare_8_branch_mz
+            AuditScope {abstract}
+                or
+                    general_concerns {abstract}
+                        mandatory
+                            item_cat55__iss8__item284__maintenance_and_calibration_of_pipettes_are_monitored_according_to_the_approved_schedule_and_procedure {abstract}
+                                mandatory
+                                    Answers__cat55__iss8__item284 {abstract}
+                                        alternative
+                                            item_cat55__iss8__item284__maintenance_and_calibration_of_pipettes_are_monitored_according_to_the_approved_schedule_and_procedure__no
+                                            item_cat55__iss8__item284__maintenance_and_calibration_of_pipettes_are_monitored_according_to_the_approved_schedule_and_procedure__not_applicable
+                                            item_cat55__iss8__item284__maintenance_and_calibration_of_pipettes_are_monitored_according_to_the_approved_schedule_and_procedure__yes
+                    note {abstract}
+                        mandatory
+                            item_cat20__iss1__item3851__note_done {abstract}
+                                mandatory
+                                    Answers__cat20__iss1__item3851 {abstract}
+                                        alternative
+                                            item_cat20__iss1__item3851__note_done__no
+                                            item_cat20__iss1__item3851__note_done__not_applicable
+                                            item_cat20__iss1__item3851__note_done__yes
+                                            item_cat20__iss1__item3851__note_done__yes_no
+                    other_equipments_maintenance_and_manuals {abstract}
+                        mandatory
+                            item_cat12__iss1__item308__the_autoclave_device_shall_undergo_routine_maintenance_in_accordance_with_the_approved_procedure_and_all_maintenance_activities_shall_be_fully_documented_and_signed_in_the_official_maintenance_form {abstract}
+                                mandatory
+                                    Answers__cat12__iss1__item308 {abstract}
+                                        alternative
+                                            item_cat12__iss1__item308__the_autoclave_device_shall_undergo_routine_maintenance_in_accordance_with_the_approved_procedure_and_all_maintenance_activities_shall_be_fully_documented_and_signed_in_the_official_maintenance_form__no
+                                            item_cat12__iss1__item308__the_autoclave_device_shall_undergo_routine_maintenance_in_accordance_with_the_approved_procedure_and_all_maintenance_activities_shall_be_fully_documented_and_signed_in_the_official_maintenance_form__not_applicable
+                                            item_cat12__iss1__item308__the_autoclave_device_shall_undergo_routine_maintenance_in_accordance_with_the_approved_procedure_and_all_maintenance_activities_shall_be_fully_documented_and_signed_in_the_official_maintenance_form__yes
+                            item_cat12__iss1__item317__a_complete_and_approved_file_for_the_water_bath_device_is_available_including_all_required_information_such_as_calibration_records_maintenance_logs_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system {abstract}
+                                mandatory
+                                    Answers__cat12__iss1__item317 {abstract}
+                                        alternative
+                                            item_cat12__iss1__item317__a_complete_and_approved_file_for_the_water_bath_device_is_available_including_all_required_information_such_as_calibration_records_maintenance_logs_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system__no
+                                            item_cat12__iss1__item317__a_complete_and_approved_file_for_the_water_bath_device_is_available_including_all_required_information_such_as_calibration_records_maintenance_logs_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system__not_applicable
+                                            item_cat12__iss1__item317__a_complete_and_approved_file_for_the_water_bath_device_is_available_including_all_required_information_such_as_calibration_records_maintenance_logs_operating_instructions_and_performance_verification_documents_and_it_is_continuously_updated_in_accordance_with_the_quality_system__yes
+                    pipette_calibration {abstract}
+                        mandatory
+                            item_cat22__iss1__item723581__pipette_certification {abstract}
+                                mandatory
+                                    Answers__cat22__iss1__item723581 {abstract}
+                                        alternative
+                                            item_cat22__iss1__item723581__pipette_certification__no
+                                            item_cat22__iss1__item723581__pipette_certification__not_applicable
+                                            item_cat22__iss1__item723581__pipette_certification__yes
+        optional
+            AuditPlan {abstract}
+                alternative
+                    quarter_2
+                    quarter_4
+            RelatedVisit {abstract}
+            AuditorCapabilities {abstract}
+                optional
+                    iso_auditor
+                    micro_auditor
+                    path_auditor
+                    senior_auditor
+
+constraints
+    planned <=> AuditPlan
+    re_evaluate => RelatedVisit
+    !re_evaluate => !RelatedVisit

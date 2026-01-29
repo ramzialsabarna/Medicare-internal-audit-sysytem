@@ -1,0 +1,74 @@
+namespace MedicareAuditStructure
+
+features
+    InternalAuditSystem {abstract}
+        mandatory
+            BranchCapabilities {abstract}
+                optional
+                    iso_active
+                    micro_active
+                    path_active
+            AuditType {abstract}
+                alternative
+                    planned
+                    re_evaluate
+            AuditedEntity {abstract}
+                alternative
+                    medicare_1021_branch__35
+                    medicare_10_branch_mj
+                    medicare_11_branch_mm
+                    medicare_12_branch_mb
+                    medicare_15_branch_mg
+                    medicare_21_branch_md
+                    medicare_22_branch__29
+                    medicare_41_branch_mw
+                    medicare_4_branch_mr
+                    medicare_50_branch__28
+                    medicare_51_branch__27
+                    medicare_53_branch_mp
+                    medicare_59_branch_mf
+                    medicare_5_branch_mh
+                    medicare_61_branch_mi
+                    medicare_7_branch_mn
+                    medicare_8_branch_mz
+                    medicare_9_branch_ms
+            AuditScope {abstract}
+                or
+                    pathology_lab {abstract}
+                        mandatory
+                            item_cat46__iss2__item102565__pathology_results_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_5_to_7_days_for_most_samples_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy {abstract}
+                                mandatory
+                                    Answers__cat46__iss2__item102565 {abstract}
+                                        alternative
+                                            item_cat46__iss2__item102565__pathology_results_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_5_to_7_days_for_most_samples_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy__no
+                                            item_cat46__iss2__item102565__pathology_results_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_5_to_7_days_for_most_samples_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy__not_applicable
+                                            item_cat46__iss2__item102565__pathology_results_shall_be_monitored_to_ensure_they_are_released_within_the_specified_timeframe_of_5_to_7_days_for_most_samples_any_delays_shall_be_documented_along_with_the_corrective_actions_taken_in_accordance_with_the_approved_policy__yes
+                    phlebotomy {abstract}
+                        mandatory
+                            item_cat25__iss2__item48__phlebotomy_staff_must_label_blood_tubes_including_barcode_application_prior_to_leaving_the_phlebotomy_room_to_ensure_correct_sample_identification {abstract}
+                                mandatory
+                                    Answers__cat25__iss2__item48 {abstract}
+                                        alternative
+                                            item_cat25__iss2__item48__phlebotomy_staff_must_label_blood_tubes_including_barcode_application_prior_to_leaving_the_phlebotomy_room_to_ensure_correct_sample_identification__no
+                                            item_cat25__iss2__item48__phlebotomy_staff_must_label_blood_tubes_including_barcode_application_prior_to_leaving_the_phlebotomy_room_to_ensure_correct_sample_identification__not_applicable
+                                            item_cat25__iss2__item48__phlebotomy_staff_must_label_blood_tubes_including_barcode_application_prior_to_leaving_the_phlebotomy_room_to_ensure_correct_sample_identification__yes
+        optional
+            AuditPlan {abstract}
+                alternative
+                    quarter_3
+                    quarter_4
+            RelatedVisit {abstract}
+            AuditorCapabilities {abstract}
+                optional
+                    iso_auditor
+                    micro_auditor
+                    path_auditor
+                    senior_auditor
+
+constraints
+    path_active <=> (medicare_12_branch_mb | medicare_50_branch__28 | medicare_7_branch_mn)
+    planned <=> AuditPlan
+    re_evaluate => RelatedVisit
+    !re_evaluate => !RelatedVisit
+    pathology_lab => path_auditor
+    !path_auditor => !pathology_lab

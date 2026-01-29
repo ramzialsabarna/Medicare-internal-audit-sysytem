@@ -1,0 +1,81 @@
+namespace MedicareAuditStructure
+
+features
+    InternalAuditSystem {abstract}
+        mandatory
+            BranchCapabilities {abstract}
+                optional
+                    iso_active
+                    micro_active
+                    path_active
+            AuditType {abstract}
+                alternative
+                    planned
+                    re_evaluate
+                    unplanned
+            AuditedEntity {abstract}
+                alternative
+                    medicare_1021_branch__35
+                    medicare_1081_branch__32
+                    medicare_10_branch_mj
+                    medicare_11_branch_mm
+                    medicare_13_branch_mt
+                    medicare_15_branch_mg
+                    medicare_18_branch_mk
+                    medicare_20_branch__31
+                    medicare_21_branch_md
+                    medicare_22_branch__29
+                    medicare_3_branch_mc
+                    medicare_41_branch_mw
+                    medicare_4_branch_mr
+                    medicare_50_branch__28
+                    medicare_51_branch__27
+                    medicare_54_branch_mu
+                    medicare_55_branch_mx
+                    medicare_58_branch_mq
+                    medicare_59_branch_mf
+                    medicare_5_branch_mh
+                    medicare_6_branch_ml
+                    medicare_7_branch_mn
+            AuditScope {abstract}
+                or
+                    lab_senior {abstract}
+                        mandatory
+                            item_cat34__iss2__item3570__verification_confirms_that_the_laboratory_supervisor_performs_routine_monitoring_validation_and_documentation_of_thermal_device_performance_to_ensure_accuracy_and_compliance_with_temperature_control_requirements {abstract}
+                                mandatory
+                                    Answers__cat34__iss2__item3570 {abstract}
+                                        alternative
+                                            item_cat34__iss2__item3570__verification_confirms_that_the_laboratory_supervisor_performs_routine_monitoring_validation_and_documentation_of_thermal_device_performance_to_ensure_accuracy_and_compliance_with_temperature_control_requirements__no
+                                            item_cat34__iss2__item3570__verification_confirms_that_the_laboratory_supervisor_performs_routine_monitoring_validation_and_documentation_of_thermal_device_performance_to_ensure_accuracy_and_compliance_with_temperature_control_requirements__not_applicable
+                                            item_cat34__iss2__item3570__verification_confirms_that_the_laboratory_supervisor_performs_routine_monitoring_validation_and_documentation_of_thermal_device_performance_to_ensure_accuracy_and_compliance_with_temperature_control_requirements__yes
+                    note {abstract}
+                        mandatory
+                            item_cat20__iss1__item3851__note_done {abstract}
+                                mandatory
+                                    Answers__cat20__iss1__item3851 {abstract}
+                                        alternative
+                                            item_cat20__iss1__item3851__note_done__no
+                                            item_cat20__iss1__item3851__note_done__not_applicable
+                                            item_cat20__iss1__item3851__note_done__yes
+        optional
+            AuditPlan {abstract}
+                alternative
+                    iso15189_clause_compliance_audit
+                    note_followup
+                    quarter_1
+                    quarter_2
+                    quarter_3
+                    quarter_4
+            RelatedVisit {abstract}
+            AuditorCapabilities {abstract}
+                optional
+                    iso_auditor
+                    micro_auditor
+                    path_auditor
+                    senior_auditor
+
+constraints
+    iso_active <=> (medicare_13_branch_mt | medicare_21_branch_md | medicare_4_branch_mr | medicare_6_branch_ml)
+    planned <=> AuditPlan
+    re_evaluate => RelatedVisit
+    !re_evaluate => !RelatedVisit
